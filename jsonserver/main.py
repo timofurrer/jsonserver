@@ -12,7 +12,7 @@ from jsonserver.core import JsonServer
 from jsonserver.routes import api
 
 
-def main(args):
+def main(args=sys.argv[1:]):
     """
         Main function for the json server.
     """

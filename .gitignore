@@ -8,5 +8,9 @@ __pycache__
 # python virtualenv
 env
 
+# python setuptools files
+dist/
+jsonserver.egg-info/
+
 # coverage file
 .coverage
