@@ -1,3 +1,8 @@
 #!/bin/sh
 
-env/bin/nosetests --verbose --rednose --with-coverage --cover-package=jsonserver --cover-erase
+NOSEBIN="env/bin/nosetests"
+if [ ! -f "$NOSEBIN" ]; then
+  NOSEBIN=nosetests
+fi
+
+$NOSEBIN --verbose --rednose --with-coverage --cover-package=jsonserver --cover-erase
