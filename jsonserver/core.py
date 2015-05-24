@@ -117,10 +117,10 @@ class JsonServer(object):
         else:
             foreign_id = "{}Id".format(table)
 
-        rows = self.where(subtable, **{foreign_id: id})
-        if not rows:
+        if not self.row_exists(table, id):
             raise RowNotFound(table, id)
 
+        rows = self.where(subtable, **{foreign_id: id})
         return {subtable: rows}
 
     def where(self, table, **kwargs):
